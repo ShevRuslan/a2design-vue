@@ -1,23 +1,6 @@
 <template>
-  <q-page class="flex column q-pa-lg">
-    <h4>Добро пожаловать!</h4>
-    <p class="text-body1">
-      Наше приложение — это удобный инструмент для взаимодействия с нашей
-      службой поддержки. Оно позволяет быстро и легко получать информацию о
-      своем профиле, смотреть последние новости, а также находить ответы на
-      часто задаваемые вопросы. Вы можете воспользоваться приложением на любом
-      устройстве, будь то смартфон, планшет или компьютер. Просто загрузите наше
-      приложение на ваше устройство или войдите в систему через браузер, и вы
-      сможете быстро получать ответы на свои вопросы. В приложении вы найдете
-      раздел FAQ, где сможете найти ответы на многие вопросы. Если вам нужна
-      дополнительная помощь, вы можете отправить нам свой вопрос прямо из
-      приложения. Мы постараемся ответить вам как можно быстрее и решить все
-      возникшие проблемы. Кроме того, приложение также позволяет управлять своим
-      профилем и получать последние новости и обновления о нашей работе. Мы
-      постоянно работаем над улучшением нашего сервиса, и наше приложение — это
-      один из шагов в этом направлении. Благодарим за использование нашего
-      приложения!
-    </p>
+  <q-page class="flex column q-px-lg q-pb-lg">
+    <AboutApp />
     <div class="row q-col-gutter-md">
       <ViewCard
         v-for="card in cards"
@@ -37,12 +20,14 @@ import { defineComponent } from "vue";
 import ViewCard from "src/components/HomePage/ViewCard.vue";
 import FeedBackForm from "src/components/HomePage/FeedBackForm.vue";
 import TimelineDev from "src/components/HomePage/TimelineDev.vue";
+import AboutApp from "src/components/HomePage/AboutApp.vue";
 export default defineComponent({
   name: "HomePage",
   components: {
     ViewCard,
     FeedBackForm,
     TimelineDev,
+    AboutApp,
   },
   setup() {
     const cards = [
