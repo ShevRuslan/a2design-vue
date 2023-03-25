@@ -27,7 +27,7 @@
         :link="card.link"
       />
     </div>
-    <h4>Остались вопросы?</h4>
+    <TimelineDev />
     <FeedBackForm />
   </q-page>
 </template>
@@ -36,11 +36,13 @@
 import { defineComponent } from "vue";
 import ViewCard from "src/components/HomePage/ViewCard.vue";
 import FeedBackForm from "src/components/HomePage/FeedBackForm.vue";
+import TimelineDev from "src/components/HomePage/TimelineDev.vue";
 export default defineComponent({
   name: "HomePage",
   components: {
     ViewCard,
     FeedBackForm,
+    TimelineDev,
   },
   setup() {
     const cards = [
