@@ -53,7 +53,6 @@
 <script>
 import { defineComponent, ref } from "vue";
 import { useQuasar } from "quasar";
-defineComponent;
 export default defineComponent({
   name: "FeedBackForm",
   setup() {
