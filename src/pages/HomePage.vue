@@ -1,4 +1,5 @@
 <template>
+  <PagePreloader :isLoading="isLoading" />
   <q-page class="flex column q-px-lg q-pb-lg">
     <AboutApp />
     <div class="row q-col-gutter-md">
@@ -16,11 +17,12 @@
 </template>
 
 <script>
-import { defineComponent } from "vue";
+import { defineComponent, onMounted, ref } from "vue";
 import ViewCard from "src/components/HomePage/ViewCard.vue";
 import FeedBackForm from "src/components/HomePage/FeedBackForm.vue";
 import TimelineDev from "src/components/HomePage/TimelineDev.vue";
 import AboutApp from "src/components/HomePage/AboutApp.vue";
+import PagePreloader from "src/components/PagePreloader.vue";
 export default defineComponent({
   name: "HomePage",
   components: {
@@ -28,6 +30,7 @@ export default defineComponent({
     FeedBackForm,
     TimelineDev,
     AboutApp,
+    PagePreloader,
   },
   setup() {
     const cards = [
@@ -56,7 +59,19 @@ export default defineComponent({
         id: 4,
       },
     ];
-    return { cards };
+
+    const isLoading = ref(true);
+
+    onMounted(() => {
+      setTimeout(() => {
+        isLoading.value = false;
+      }, 2000);
+    });
+
+    return {
+      cards,
+      isLoading,
+    };
   },
 });
 </script>
