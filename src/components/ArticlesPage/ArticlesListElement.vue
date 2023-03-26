@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper-article col-lg-4 col-md-6 col-sm-12">
     <q-card class="article">
-      <img :src="img" clas />
+      <img :src="img" />
 
       <q-card-section>
         <div class="text-h6">{{ title }}</div>
