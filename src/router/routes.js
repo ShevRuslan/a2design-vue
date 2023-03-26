@@ -1,3 +1,21 @@
+const requireAuth = (to, from, next) => {
+  const isAuthenticated = localStorage.getItem("isAuthenticated");
+
+  if (isAuthenticated) {
+    next();
+  } else {
+    next({ path: "/login" });
+  }
+};
+const isAuth = (to, from, next) => {
+  const isAuthenticated = localStorage.getItem("isAuthenticated");
+
+  if (isAuthenticated) {
+    next({ path: "/profile" });
+  } else {
+    next({ path: "/login" });
+  }
+};
 const routes = [
   {
     path: "/",
@@ -13,6 +31,13 @@ const routes = [
     path: "/profile",
     component: () => import("layouts/MainLayout.vue"),
     children: [{ path: "", component: () => import("pages/ProfilePage.vue") }],
+    beforeEnter: requireAuth,
+  },
+  {
+    path: "/login",
+    component: () => import("layouts/MainLayout.vue"),
+    children: [{ path: "", component: () => import("pages/LoginPage.vue") }],
+    beforeEnter: isAuth,
   },
   // Always leave this as last one,
   // but you can also remove it
