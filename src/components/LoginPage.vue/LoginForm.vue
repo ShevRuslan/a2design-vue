@@ -31,11 +31,13 @@
 import { defineComponent, ref } from "vue";
 import { useRouter } from "vue-router";
 import { useQuasar } from "quasar";
+import { useStore } from "vuex";
+
 export default defineComponent({
   name: "LoginForm",
   setup() {
     const router = useRouter();
-
+    const store = useStore();
     const $q = useQuasar();
 
     const username = ref("");
@@ -51,6 +53,7 @@ export default defineComponent({
         setTimeout(() => {
           submitting.value = false;
           $q.localStorage.set("isAuthenticated", true);
+          store.commit("auth/setAuthenticated", true);
           router.push("/profile");
         }, 1000);
       } else {

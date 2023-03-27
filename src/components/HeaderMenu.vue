@@ -30,24 +30,25 @@
 </template>
 
 <script>
-import { defineComponent, ref, onMounted } from "vue";
+import { defineComponent, watchEffect, computed } from "vue";
 import { useQuasar } from "quasar";
 import { useRouter } from "vue-router";
+import { useStore } from "vuex";
 export default defineComponent({
   name: "HeaderMenu",
   setup() {
-    const isAuthenticated = ref(false);
+    const store = useStore();
     const router = useRouter();
     const $q = useQuasar();
-    onMounted(() => {
-      isAuthenticated.value = $q.localStorage.getItem("isAuthenticated");
-    });
     const logout = () => {
-      isAuthenticated.value = false;
       $q.localStorage.set("isAuthenticated", false);
+      store.commit("auth/setAuthenticated", false);
       router.push("/");
     };
-    return { isAuthenticated, logout };
+    return {
+      isAuthenticated: computed(() => store.getters["auth/getAuthenticated"]),
+      logout,
+    };
   },
 });
 </script>

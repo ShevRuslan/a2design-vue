@@ -1,2 +1,3 @@
-export function someGetter (/* state */) {
+export function getAuthenticated(state) {
+  return state.isAuthenticated;
 }
