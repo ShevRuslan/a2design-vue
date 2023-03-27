@@ -1,6 +1,6 @@
+import { LocalStorage } from "quasar";
 const requireAuth = (to, from, next) => {
-  const isAuthenticated = localStorage.getItem("isAuthenticated");
-
+  const isAuthenticated = LocalStorage.getItem("isAuthenticated") ?? false;
   if (isAuthenticated) {
     next();
   } else {
@@ -8,12 +8,11 @@ const requireAuth = (to, from, next) => {
   }
 };
 const isAuth = (to, from, next) => {
-  const isAuthenticated = localStorage.getItem("isAuthenticated");
-
+  const isAuthenticated = LocalStorage.getItem("isAuthenticated") ?? false;
   if (isAuthenticated) {
     next({ path: "/profile" });
   } else {
-    next({ path: "/login" });
+    next();
   }
 };
 const routes = [
