@@ -13,50 +13,16 @@
 </template>
 
 <script>
-import { defineComponent } from "vue";
+import { defineComponent, computed } from "vue";
 import ArticlesListElement from "./ArticlesListElement.vue";
+import { useStore } from "vuex";
 export default defineComponent({
   name: "ArticlesList",
   components: { ArticlesListElement },
   setup() {
-    const articles = [
-      {
-        id: 1,
-        img: "https://cdn.quasar.dev/img/mountains.jpg",
-        title: "Первая новость",
-        author: "Руслан Шевцов",
-        description: "Какое-то описание новости",
-      },
-      {
-        id: 2,
-        img: "https://cdn.quasar.dev/img/mountains.jpg",
-        title: "Вторая новость",
-        author: "Руслан Шевцов",
-        description: "Какое-то описание новости",
-      },
-      {
-        id: 3,
-        img: "https://cdn.quasar.dev/img/mountains.jpg",
-        title: "Третья новость",
-        author: "Руслан Шевцов",
-        description: "Какое-то описание новости",
-      },
-      {
-        id: 4,
-        img: "https://cdn.quasar.dev/img/mountains.jpg",
-        title: "Четвертая новость",
-        author: "Руслан Шевцов",
-        description: "Какое-то описание новости",
-      },
-      {
-        id: 5,
-        img: "https://cdn.quasar.dev/img/mountains.jpg",
-        title: "Пятая новость",
-        author: "Руслан Шевцов",
-      },
-    ];
+    const store = useStore();
     return {
-      articles,
+      articles: computed(() => store.getters["articles/getArticles"]),
     };
   },
 });
