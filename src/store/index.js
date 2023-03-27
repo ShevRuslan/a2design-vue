@@ -1,6 +1,6 @@
 import { store } from "quasar/wrappers";
 import { createStore } from "vuex";
-import auth from "./module-example";
+import auth from "./auth";
 // import example from './module-example'
 
 /*
