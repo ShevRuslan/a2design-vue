@@ -17,8 +17,7 @@
         outlined
         v-model="link"
         label="Ссылка на изображение"
-        lazy-rules
-        :rules="[(val) => (val && val.length > 0) || 'Обязательное поле!']"
+        class="q-mb-lg"
       />
       <q-input
         v-model="description"
@@ -56,12 +55,12 @@ export default defineComponent({
     const $q = useQuasar();
 
     const title = ref("");
-    const link = ref("");
+    const link = ref(null);
     const description = ref("");
 
     const addArticle = () => {
       store.dispatch("articles/addArticle", {
-        img: link.value,
+        img: link.value ?? "https://cdn.quasar.dev/img/mountains.jpg",
         title: title.value,
         author: "Руслан Шевцов",
         description: description.value,
