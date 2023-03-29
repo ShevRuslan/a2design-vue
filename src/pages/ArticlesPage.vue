@@ -7,6 +7,7 @@
 
 <script>
 import { defineComponent, onMounted, ref } from "vue";
+import { useStore } from "vuex";
 import PagePreloader from "src/components/PagePreloader.vue";
 import ArticlesList from "src/components/ArticlesPage/ArticlesList.vue";
 export default defineComponent({
@@ -16,9 +17,11 @@ export default defineComponent({
     ArticlesList,
   },
   setup() {
+    const store = useStore();
     const isLoading = ref(true);
 
     onMounted(() => {
+      store.dispatch("articles/loadArticles");
       setTimeout(() => {
         isLoading.value = false;
       }, 2000);
