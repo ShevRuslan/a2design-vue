@@ -1,5 +1,4 @@
 <template>
-  <h4>Новости</h4>
   <div class="row q-col-gutter-md items-stretch">
     <ArticlesListElement
       v-for="article in articles"
@@ -15,16 +14,16 @@
 <script>
 import { defineComponent, computed } from "vue";
 import ArticlesListElement from "./ArticlesListElement.vue";
-import { useStore } from "vuex";
 export default defineComponent({
   name: "ArticlesList",
   components: { ArticlesListElement },
-  setup() {
-    const store = useStore();
-    return {
-      articles: computed(() => store.getters["articles/getArticles"]),
-    };
+  props: {
+    articles: {
+      type: Array,
+      required: false,
+    },
   },
+  setup() {},
 });
 </script>
 
