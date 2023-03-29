@@ -8,7 +8,7 @@ export function loadArticles({ commit }) {
         id: 1,
         img: "https://cdn.quasar.dev/img/mountains.jpg",
         title: "Первая новость",
-        author: "Руслан Шевцов",
+        author: "Руслан Нешевцов",
         description: "Какое-то описание новости",
       },
       {
@@ -22,7 +22,7 @@ export function loadArticles({ commit }) {
         id: 3,
         img: "https://cdn.quasar.dev/img/mountains.jpg",
         title: "Третья новость",
-        author: "Руслан Шевцов",
+        author: "Руслан Нешевцов",
         description: "Какое-то описание новости",
       },
       {
@@ -36,7 +36,7 @@ export function loadArticles({ commit }) {
         id: 5,
         img: "https://cdn.quasar.dev/img/mountains.jpg",
         title: "Пятая новость",
-        author: "Руслан Шевцов",
+        author: "Руслан Нешевцов",
       },
     ];
     LocalStorage.set("articles", JSON.stringify(articles));
