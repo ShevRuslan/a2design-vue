@@ -48,22 +48,29 @@
 <script>
 import { defineComponent, ref } from "vue";
 import { useStore } from "vuex";
+import { useQuasar } from "quasar";
 export default defineComponent({
   name: "FormAddArticle",
   setup() {
     const store = useStore();
+    const $q = useQuasar();
 
     const title = ref("");
     const link = ref("");
     const description = ref("");
 
     const addArticle = () => {
-      store.commit("articles/addArticle", {
-        img: "https://cdn.quasar.dev/img/mountains.jpg",
+      store.dispatch("articles/addArticle", {
+        img: link.value,
         title: title.value,
         author: "Руслан Шевцов",
         description: description.value,
         id: store.getters["articles/getArticles"].length + 1,
+      });
+      $q.notify({
+        message: "Новость успешно создана!",
+        color: "positive",
+        position: "bottom-right",
       });
     };
     return {
