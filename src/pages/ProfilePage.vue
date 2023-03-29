@@ -6,6 +6,7 @@
       <ProfileAvatar />
       <ProfileAbout />
     </div>
+    <ProfileArticles />
     <FormAddArticle />
   </q-page>
 </template>
@@ -15,6 +16,7 @@ import { defineComponent, onMounted, ref } from "vue";
 import PagePreloader from "src/components/PagePreloader.vue";
 import ProfileAvatar from "src/components/ProfilePage/ProfileAvatar.vue";
 import ProfileAbout from "src/components/ProfilePage/ProfileAbout.vue";
+import ProfileArticles from "src/components/ProfilePage/ProfileArticles.vue";
 import FormAddArticle from "src/components/ProfilePage/FormAddArticle.vue";
 export default defineComponent({
   name: "ArticlesPage",
@@ -22,6 +24,7 @@ export default defineComponent({
     PagePreloader,
     ProfileAvatar,
     ProfileAbout,
+    ProfileArticles,
     FormAddArticle,
   },
   setup() {
