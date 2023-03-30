@@ -43,4 +43,10 @@ export default defineComponent({
 });
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+@media screen and (max-width: 464px) {
+  .wrapper-profile {
+    flex-direction: column;
+  }
+}
+</style>

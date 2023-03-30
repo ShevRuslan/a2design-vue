@@ -31,4 +31,10 @@ export default defineComponent({
 });
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+@media screen and (max-width: 600px) {
+  h4 {
+    font-size: 24px;
+  }
+}
+</style>

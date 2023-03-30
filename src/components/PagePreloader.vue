@@ -58,4 +58,9 @@ export default defineComponent({
     opacity: 1;
   }
 }
+@media screen and (max-width: 600px) {
+  h2 {
+    font-size: 38px;
+  }
+}
 </style>
