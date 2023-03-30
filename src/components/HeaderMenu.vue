@@ -5,6 +5,7 @@
     </q-avatar>
     <q-btn flat label="Главная" to="/" />
     <q-btn flat label="Новости" to="/articles" />
+    <q-btn flat label="FAQ" to="/faq" />
     <q-space />
     <template v-if="isAuthenticated">
       <q-btn
