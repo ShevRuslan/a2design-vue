@@ -53,3 +53,13 @@ export function addArticle({ commit }, article) {
   LocalStorage.set("articles", JSON.stringify(articles));
   commit("addArticles", articles);
 }
+
+export function deleteArticle({ commit }, id) {
+  let articles = JSON.parse(LocalStorage.getItem("articles"));
+  if (!articles) {
+    return;
+  }
+  const filteredArticles = articles.filter((article) => article.id !== id);
+  LocalStorage.set("articles", JSON.stringify(filteredArticles));
+  commit("addArticles", filteredArticles);
+}

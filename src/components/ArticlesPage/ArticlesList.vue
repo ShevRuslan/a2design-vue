@@ -7,6 +7,8 @@
       :img="article.img"
       :author="article.author"
       :description="article.description"
+      :showDeleteButton="showDeleteButton"
+      :id="article.id"
     />
   </div>
 </template>
@@ -20,6 +22,11 @@ export default defineComponent({
   props: {
     articles: {
       type: Array,
+      required: false,
+    },
+    showDeleteButton: {
+      type: Boolean,
+      default: false,
       required: false,
     },
   },
