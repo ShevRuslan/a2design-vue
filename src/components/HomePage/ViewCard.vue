@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper-card col-6">
+  <div class="wrapper-card col-lg-6 col-md-6 col-sm-12 col-xs-12">
     <q-card
       class="my-card text-white"
       style="background: radial-gradient(circle, #35a2ff 0%, #014a88 100%)"
