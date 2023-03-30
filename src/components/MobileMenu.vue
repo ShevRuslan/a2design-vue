@@ -43,6 +43,10 @@ export default defineComponent({
       type: Function,
       required: true,
     },
+    logout: {
+      type: Function,
+      required: true,
+    },
     isAuthenticated: {
       type: Boolean,
       required: true,
