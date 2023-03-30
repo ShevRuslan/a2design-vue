@@ -1,5 +1,5 @@
 <template>
-  <div class="row q-col-gutter-md items-stretch">
+  <div class="row q-col-gutter-md items-stretch wrapper-articles">
     <ArticlesListElement
       v-for="article in articles"
       :key="article.id"
@@ -34,4 +34,8 @@ export default defineComponent({
 });
 </script>
 
-<style></style>
+<style lang="scss">
+.wrapper-articles {
+  min-height: 600px;
+}
+</style>
