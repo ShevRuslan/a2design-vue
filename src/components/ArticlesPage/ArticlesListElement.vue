@@ -8,7 +8,7 @@
         <div class="text-subtitle2">{{ author }}</div>
       </q-card-section>
 
-      <q-card-section class="q-pt-none">
+      <q-card-section class="q-pt-none article-description">
         {{ description }}
       </q-card-section>
       <q-card-section class="q-pt-none full-width">
@@ -159,5 +159,8 @@ export default defineComponent({
 <style lang="scss" scoped>
 .article {
   height: 100%;
+  &-description {
+    word-wrap: break-word;
+  }
 }
 </style>
