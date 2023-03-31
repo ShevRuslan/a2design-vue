@@ -8,13 +8,14 @@
       :author="article.author"
       :description="article.description"
       :showDeleteButton="showDeleteButton"
+      :showEditButton="showEditButton"
       :id="article.id"
     />
   </div>
 </template>
 
 <script>
-import { defineComponent, computed } from "vue";
+import { defineComponent } from "vue";
 import ArticlesListElement from "./ArticlesListElement.vue";
 export default defineComponent({
   name: "ArticlesList",
@@ -25,6 +26,11 @@ export default defineComponent({
       required: false,
     },
     showDeleteButton: {
+      type: Boolean,
+      default: false,
+      required: false,
+    },
+    showEditButton: {
       type: Boolean,
       default: false,
       required: false,

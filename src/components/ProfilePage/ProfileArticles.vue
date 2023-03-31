@@ -1,6 +1,6 @@
 <template>
   <h4>Ваши новости:</h4>
-  <ArticlesList :articles="articles" :showDeleteButton="true" />
+  <ArticlesList :articles="articles" :showDeleteButton="true" :showEditButton="true" />
 </template>
 
 <script>
