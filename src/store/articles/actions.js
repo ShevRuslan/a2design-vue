@@ -63,3 +63,7 @@ export function deleteArticle({ commit }, id) {
   LocalStorage.set("articles", JSON.stringify(filteredArticles));
   commit("addArticles", filteredArticles);
 }
+
+export function editArticle({ commit }, payload) {
+  commit("editArticle", payload);
+}
