@@ -64,6 +64,7 @@ export function deleteArticle({ commit }, id) {
   commit("addArticles", filteredArticles);
 }
 
-export function editArticle({ commit }, payload) {
+export function editArticle({ commit, state }, payload) {
   commit("editArticle", payload);
+  LocalStorage.set("articles", JSON.stringify(state.articles));
 }

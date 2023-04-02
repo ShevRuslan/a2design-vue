@@ -9,6 +9,5 @@ export function editArticle(state, { id, title, description, img }) {
     article.title = title;
     article.description = description;
     article.img = img;
-    LocalStorage.set("articles", JSON.stringify(state.articles));
   }
 }
