@@ -1,5 +1,5 @@
 <template>
-  <h4>Остались вопросы?</h4>
+  <h4 class="feedback-form-typography">Остались вопросы?</h4>
   <div class="wrapper-feedbackform">
     <q-form
       @submit.prevent="send"
@@ -97,4 +97,10 @@ export default defineComponent({
 });
 </script>
 
-<style></style>
+<style lang="scss">
+@media screen and (max-width: 600px) {
+  .feedback-form-typography {
+    font-size: 30px;
+  }
+}
+</style>

@@ -4,7 +4,7 @@
       <img :src="img" />
 
       <q-card-section>
-        <div class="text-h6">{{ title }}</div>
+        <div class="text-h6 article-title">{{ title }}</div>
         <div class="text-subtitle2">{{ author }}</div>
       </q-card-section>
 
@@ -45,7 +45,9 @@
               outlined
               v-model="titleModel"
               lazy-rules
-              :rules="[(val) => (val && val.length > 0) || 'Обязательное поле!']"
+              :rules="[
+                (val) => (val && val.length > 0) || 'Обязательное поле!',
+              ]"
             />
             <q-input outlined v-model="imgModel" class="q-mb-lg" />
             <q-input
@@ -53,7 +55,9 @@
               outlined
               type="textarea"
               lazy-rules
-              :rules="[(val) => (val && val.length > 0) || 'Обязательное поле!']"
+              :rules="[
+                (val) => (val && val.length > 0) || 'Обязательное поле!',
+              ]"
             />
             <q-card-actions align="center" class="q-pa-none">
               <q-btn-group spread class="full-width">
@@ -159,7 +163,8 @@ export default defineComponent({
 <style lang="scss" scoped>
 .article {
   height: 100%;
-  &-description {
+  &-description,
+  &-title {
     word-wrap: break-word;
   }
 }

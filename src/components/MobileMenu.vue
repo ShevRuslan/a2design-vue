@@ -78,7 +78,7 @@ export default defineComponent({
   position: fixed;
   bottom: 0;
   left: 0;
-  height: 94.5vh;
+  height: 95vh;
   width: 100vw;
   z-index: 99999;
   color: #ffffff;

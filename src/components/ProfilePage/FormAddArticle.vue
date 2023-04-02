@@ -1,5 +1,5 @@
 <template>
-  <h4>Опубликуйте свою новость</h4>
+  <h4 class="addarticle-form">Опубликуйте свою новость</h4>
   <div class="wrapper-formAddArticle">
     <q-form
       @submit.prevent="addArticle"
@@ -82,4 +82,10 @@ export default defineComponent({
 });
 </script>
 
-<style></style>
+<style>
+@media screen and (max-width: 600px) {
+  .addarticle-form {
+    font-size: 25px;
+  }
+}
+</style>

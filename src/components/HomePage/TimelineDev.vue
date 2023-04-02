@@ -1,7 +1,11 @@
 <template>
   <div class="q-mt-lg">
     <q-timeline color="secondary">
-      <q-timeline-entry heading body="Этапы разработка нашего проекта" />
+      <q-timeline-entry
+        class="timeline-heading"
+        heading
+        body="Этапы разработка нашего проекта"
+      />
 
       <q-timeline-entry
         v-for="timeline in timelines"
@@ -65,4 +69,12 @@ export default defineComponent({
 });
 </script>
 
-<style></style>
+<style lang="scss">
+@media screen and (max-width: 600px) {
+  .timeline-heading {
+    .q-timeline__heading-title {
+      font-size: 30px;
+    }
+  }
+}
+</style>
